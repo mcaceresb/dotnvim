@@ -1,0 +1,165 @@
+snippet pyproject "Python project template" b
+#!/usr/bin/env python
+
+# ---------------------------------------------------------------------
+# Program: ${1:`!v expand('%:t')`}
+# Created: `date`
+# Updated: `date`
+# Author:  Mauricio Caceres <caceres@nber.org>
+# Purpose: ${2:${VISUAL:content}}
+
+from __future__ import print_function
+from traceback import format_exc
+import datetime
+import sys
+import os
+
+def main():
+
+	# Startup
+	# -------
+
+	maindir  = "`!v expand('%:p:h')`/";
+	progmsg  = "`!v expand('%:r')`/";
+	mailprog = maindir + "code/`!v expand('%:r')`_99mail.sh"
+	logfile  = maindir + "code/`!v expand('%:r')`.log"
+	outdir   = maindir + "out"
+	datadir  = maindir + "data"
+
+	sys.stdout = Logger(logfile)
+	print(sys.version)
+	print(os.linesep.join(os.uname()))
+
+	datestr = datetime.datetime.today().strftime("%H:%M %a %b %d, %Y")
+	print(os.linesep.join(['-' * 72, datestr, '', progmsg]))
+
+	mkpath(os.path.join(outdir, "fig"))
+	mkpath(os.path.join(outdir, "tables"))
+	mkpath(os.path.join(outdir, "data"))
+
+	outtab   = os.path.join(outdir, "tables/tables.txt")
+	datafile = os.path.join(datadir, "data.h5")
+	outfile  = os.path.join(outdir,  "data/data.h5")
+
+	# Run the things!
+	# ---------------
+
+	import get
+	try:
+		get.main(datadir, "data.h5")
+		progmsg  = progmsg + " ran [Automated Message]"
+		progstat = "Cue the cherubs!"
+	except:
+		progmsg  = "ERROR: " + progmsg
+		progstat = format_exc()
+
+	# Exit messages
+	# -------------
+
+	datestr = datetime.datetime.today().strftime("%H:%M %a %b %d, %Y")
+	print(os.linesep.join(['-' * 72, datestr, '', progstat, '', progmsg]))
+	os.system('{} "{}"'.format(mailprog, progmsg))
+
+class Logger():
+	def __init__(self, logfile = os.path.splitext(__file__)[0] + '.log'):
+		self.terminal = sys.stdout
+		self.log = open(logfile, 'w')
+
+	def write(self, message):
+		self.terminal.write(message)
+		self.log.write(message)
+
+def mkpath(mdir, warn_exists = False):
+	try:
+		os.makedirs(mdir)
+	except OSError:
+		if not os.path.isdir(mdir):
+			raise
+		elif warn_exists:
+			print("WARNING: '{}' exists!".format(mdir))
+
+# ---------------------------------------------------------------------
+# Run the things
+
+if __name__ == "__main__":
+	main()
+endsnippet
+
+snippet pyquick "Python quick and easy setup"
+#!/usr/bin/env python
+
+# ---------------------------------------------------------------------
+# Project: $1
+# Program: ${2:`!v expand('%:t')`}
+# Author:  Mauricio Caceres Bravo <mauricio_caceres_bravo@brown.edu>
+# Created: `date +'%a %b %d %H:%M:%S %Z %Y'`
+# Purpose: $3
+#              - xx ...
+# Note:    xx ...
+
+# ---------------------------------------------------------------------
+# Imports, Main
+
+def main():
+    pass
+
+
+# ---------------------------------------------------------------------
+# xx ...
+
+def foo():
+	pass
+
+
+# ---------------------------------------------------------------------
+# Run the things!
+
+if __name__ == "__main__":
+    main()
+endsnippet
+
+snippet Makefile "personal Makefile.py system" b
+import sys
+sys.dont_write_bytecode = True
+from make import MakefileTodo  # noqa
+
+todo = MakefileTodo()
+
+#######################################################################
+#            Define some stuff here if you are so inclined            #
+#######################################################################
+
+todo.default.email      = "\`whoami\`@nber.org"
+todo.default.guessrules = True
+
+#######################################################################
+#                Define all the programs for make.py                  #
+#######################################################################
+
+todo.add_check("filename", tags = ["for tags"])
+
+todo.add_get("path to src", "path to dst symlink", tags = ["tags"])
+
+todo.add_run("file to execute",
+             executable = "path to executable",
+             rules      = "or rule to use",
+             options    = "options for executable",
+             args       = "arguments for file to exec",
+             tags       = ["tags"])
+
+todo.add_sendmail()
+
+todo.add_sync("path to src",
+              "path to dest",
+              exclude = ["exclude"],
+              tags = ["tags"],
+              partial = {
+                  "subfolder-from-src/": "subfolder-from-dest",
+                  "subfile-from-src/": "subfile-from-dest/"
+              },
+              server = False,
+              user = "server-username",
+              server_name = "server-address",
+              server_to = False,
+              server_from = False)
+endsnippet
