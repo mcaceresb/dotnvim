@@ -65,6 +65,7 @@ endif
 
 " Recommended: Frequently used {{{2
 
+Plug 'mhinz/neovim-remote',             {'as' : 'nvr'}
 Plug 'glacambre/firenvim',              {'as' : 'firenvim'}
 Plug 'kassio/neoterm',                  {'as' : 'neoterm'}
 Plug 'vimwiki/vimwiki',                 {'as' : 'vimwiki'}
@@ -524,6 +525,18 @@ else
     let g:UltiSnipsSnippetsDir  = "~/.vim/plugged/snippets/UltiSnips"
 endif
 " let g:UltiSnipsRemoveSelectModeMappings = 0
+
+" TComment: Easy commenting {{{2
+
+call tcomment#type#Define('stata', '* %s')
+call tcomment#type#Define('stata_inline', '// %s')
+
+" NVR: NeoVim Remote {{{2
+
+" NeoTerm: NeoVim terminal commands {{{2
+
+nnoremap ,p :TREPLSendLine<CR>
+vnoremap ,p :TREPLSendSelection<CR>
 
 " NCM2: NeoVim Completion Manager 2 {{{2
 
