@@ -68,7 +68,7 @@ endif
 Plug 'mhinz/neovim-remote',             {'as' : 'nvr'}
 Plug 'glacambre/firenvim',              {'as' : 'firenvim'}
 Plug 'kassio/neoterm',                  {'as' : 'neoterm'}
-Plug 'vimwiki/vimwiki',                 {'as' : 'vimwiki'}
+" Plug 'vimwiki/vimwiki',                 {'as' : 'vimwiki'}
 Plug 'Yggdroot/indentLine',             {'as' : 'indentline'}
 Plug 'Raimondi/delimitMate',            {'as' : 'delimate'}
 Plug 'haya14busa/incsearch.vim',        {'as' : 'incsearch'}
@@ -78,6 +78,7 @@ Plug 'w0rp/ale',                        {'as' : 'ale'}
 Plug 'nvim-treesitter/nvim-treesitter', {'as' : 'treesitter', 'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim',           {'as' : 'plenary'}
 Plug 'mzlogin/vim-markdown-toc',        {'as' : 'markdown-toc'}
+Plug 'Asheq/close-buffers.vim',         {'as' : 'close-buffers'}
 
 " Language Support: Language-specific {{{2
 
@@ -421,6 +422,7 @@ let g:airline#extensions#ale#enabled = 1
 " let g:ale_set_quickfix = 1
 " let g:ale_python_flake8_executable = '/usr/bin/flake8 --ignore=E221,E251,E241,E501'
 " let g:ale_python_flake8_executable = 'flake8-python2'
+let g:ale_linters_ignore = {'python': ['pylint']}
 
 autocmd BufNewFile,BufRead *.py call SwitchFlake8()
 nnoremap <F8> :ALEToggle<CR>

@@ -46,16 +46,16 @@ nnoremap <leader><F11> :call TextEnableCodeSnip('r', '>>=', '@', 'SpecialComment
 
 "  ColorSchemeToggle: {{{2 Toggle light and dark colors with custom overrides
 
+let s:thisfilepath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 function! ColorSchemeToggle()
-    let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
     if &background == "dark"
         set background=light
-        source s:path . 'colors.vim'
+        exec 'source ' .  s:thisfilepath . '/colors.vim'
         exec 'highlight Normal guibg=#FFFFFF'
         " highlight CursorLine guibg=grey96
     else
         set background=dark
-        source s:path . 'colors.vim'
+        exec 'source ' . s:thisfilepath . '/colors.vim'
         exec 'highlight Normal guibg=NONE'
     endif
 endfunction
@@ -212,6 +212,14 @@ function! SummarizeTabs()
 endfunction
 
 " SynStack: Show syntax highlighting groups for word under cursor {{{2
+
+" From http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " From http://vimcasts.org/episodes/creating-colorschemes-for-vim/
 function! <SID>SynStack()
