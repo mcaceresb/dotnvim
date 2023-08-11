@@ -1,33 +1,51 @@
-Minimal NeoVim Installation
-===========================
+Personal NeoVim Installation
+============================
 
-Two goals
+Local Installation
+------------------
 
-- Portability (especially to servers)
-- Reflects my current neovim setup
+Requirements:
 
-This replaces `$HOME/code/dotvim`.
+- NeoVim (from your OS repository or follow the instructions on [github.com/neovim/neovim](https://github.com/neovim/neovim)).
+- A [Nerd Font](https://github.com/ryanoasis/nerd-fonts); I personally use the patched `SourceCodePro` (Sauce Code Pro). I rely heavily on a patched fonts for various symbols.
 
-Extras
-------
+Installation:
 
-I much recommend using a [Nerd Font](https://github.com/ryanoasis/nerd-fonts). I personally use the patched `SourceCodePro` and rely on patch fonts for various symbols defined throughout the configuration.
+```bash
+ln -sf `pwd`/init.lua  ~/.config/nvim/init.lua
+ln -sf `pwd`/lua       ~/.config/nvim
+ln -sf `pwd`/custom    ~/.config/nvim
+ln -sf `pwd`/snippets  ~/.config/nvim
+```
 
-Installation
-------------
+Server Installation
+-------------------
 
-This assumes NeoVim is already installed (from your OS repository or follow the instructions on [github.com/neovim/neovim](https://github.com/neovim/neovim)).
+Try out whichever you prefer
 
-- Run `bash install/install.sh`
-- To install the plugins:
-    - If you have an internet connection, enter neovim via `nvim -u ~/.config/nvim/init.vim -c PlugInstall`.
-    - If you don't, you can copy the plugins to `~/.local/share/nvim/plugged`
-- Extend snippets:
-    - `cp ${ROOT}/snippets/snippets/*  ~/.local/share/nvim/plugged/snippets/snippets/  -sf`
-    - `cp ${ROOT}/snippets/UltiSnips/* ~/.local/share/nvim/plugged/snippets/UltiSnips/ -sf`
-    - Add `extends allmc` to the top of `all.snippets`
-    - ibid. `extends juliamc` to `julia.snippets`
-    - ibid. `extends pythonmc` to `python.snippets`
+1. Set up ~/bin in path
+2. Noeovim binary
+3. rg, fd, xsel
+4. Distros, etc.
+5. Font
+
+```bash
+rm -f ~/.config/nvim/lazy-lock.json
+rm -f ~/.config/nvim/init.lua
+rm -f ~/.config/nvim/lua
+
+ln -sf ~/code/dotnvim/init.lua              ~/.config/nvim/init.lua
+ln -sf ~/code/dotnvim/lua                   ~/.config/nvim/lua
+
+ln -sf ~/bulk/lib/AstroNvim/init.lua        ~/.config/nvim/init.lua
+ln -sf ~/bulk/lib/AstroNvim/lua             ~/.config/nvim/lua
+
+ln -sf ~/bulk/lib/LazyVimStarter/init.lua   ~/.config/nvim/init.lua
+ln -sf ~/bulk/lib/LazyVimStarter/lua        ~/.config/nvim/lua
+
+ln -sf ~/bulk/lib/NvChad/init.lua           ~/.config/nvim/init.lua
+ln -sf ~/bulk/lib/NvChad/lua                ~/.config/nvim/lua
+```
 
 License
 -------

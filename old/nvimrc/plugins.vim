@@ -537,6 +537,7 @@ call tcomment#type#Define('stata_inline', '// %s')
 
 " NeoTerm: NeoVim terminal commands {{{2
 
+" vnoremap ,p :s/\v\/\/\///e<CR>gvJ:TREPLSendSelection<CR>u
 nnoremap ,p :TREPLSendLine<CR>
 vnoremap ,p :TREPLSendSelection<CR>
 
