@@ -42,11 +42,13 @@ require("lazy").setup({
   require "plugins.etc.mini.indentscope",
   require "plugins.etc.neotree",
 
-}, { change_detection = { notify = false }})
+})
+-- }, { change_detection = { notify = false }})
 
 -- TODO: language support
 -- ----------------------
 
+-- snippet trigger
 -- migrate snippets (mainly tex, stata)
 -- replace \xx with symbols (delta, sigma, etc.)
 -- lsp for python, tex, R, stata

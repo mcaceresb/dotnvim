@@ -27,4 +27,5 @@ return function(_, opts)
       end
     end,
   })
+  vim.keymap.set({"i"}, "<C-space>", function() ls.expand() end, {silent = true })
 end

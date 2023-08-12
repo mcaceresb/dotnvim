@@ -181,11 +181,13 @@ local options = {
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4),  { "i", "c" }),
     ["<C-y>"] = cmp.config.disable,
     ["<C-e>"] = cmp.mapping { i = cmp.mapping.abort(), c = cmp.mapping.close() },
-    ["<CR>"]  = cmp.mapping(function()
+    ["<CR>"]  = cmp.mapping(function(fallback)
       if luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
+      -- elseif cmp.visible() then
+      --   cmp.mapping.confirm { select = false }
       else
-        cmp.mapping.confirm { select = false }
+        fallback()
       end
     end),
     ["<Tab>"] = cmp.mapping(function(fallback)
