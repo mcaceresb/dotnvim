@@ -36,7 +36,6 @@ require("lazy").setup({
   -- require "plugins.etc.cheatsheet", -- open with <leader>?
 
   require "plugins.etc.pencil",
-  require "plugins.etc.base46",
   require "plugins.etc.todo",
   require "plugins.etc.align",
   require "plugins.etc.mini.indentscope",
@@ -66,6 +65,8 @@ require("lazy").setup({
 -- TODO: Check these out!
 -- ----------------------
 
+-- xx nvchad telescope base46 theme
+-- xx nvchad lazy base46 theme
 -- xx rafamadriz/friendly-snippets
 -- xx folke/noice.nvim
 -- xx uga-rosa/translate.nvim
@@ -77,4 +78,3 @@ require("lazy").setup({
 -- xx lambdalisue/suda.vim
 -- xx lazyvim extras
 -- xx astrovim
--- xx nvchad telescope base46 theme

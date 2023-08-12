@@ -12,11 +12,14 @@ Requirements:
 Installation:
 
 ```bash
-git clone https://github.com/mcaceresb/dotnvim && cd dotnvim
-ln -sf `pwd`/init.lua  ~/.config/nvim/init.lua
-ln -sf `pwd`/lua       ~/.config/nvim
-ln -sf `pwd`/custom    ~/.config/nvim
+mkdir ~/.config/nvim
+git clone https://github.com/mcaceresb/dotnvim
+ln -sf `pwd`/dotnvim/init.lua  ~/.config/nvim/init.lua
+ln -sf `pwd`/dotnvim/lua       ~/.config/nvim/lua
+ln -sf `pwd`/dotnvim/custom    ~/.config/nvim/custom
 ```
+
+Start NeoVim; the first time it boots up it will automagically install all required packages.
 
 Server Installation
 -------------------
@@ -92,32 +95,55 @@ Server Installation
 
     - Set your terminal's font to your newly downloaded font (it will be something like Edit > Profiles > Edit > Font)
 
-5. You're set to try out neovim! Install this repository as indicated [above](#local-installation)
+5. You're set to try out neovim! You can install this repository as indicated [above](#local-installation). My normal workflow
 
-6. However, I might recommend you try a neovim distribution. There are several that are easy to try and fairly popular!
+    - Open a vertical split (`:vsp<CR>`)
+    - Make it into a terminal (`:Tnew<CR>`)
+    - (ssh into server if necessary)
+    - Start program in terminal (Stata, Python, R, etc.)
+    - Send lines from code into terminal (`:TREPLSendLine<CR>` or `:TREPLSendSelection<CR>`)
+
+6. I really recommend you try a neovim distribution. There are several that are easy to try and fairly popular! Their aesthetics are much nicer and their configurations more polished (my own setup here is very much a WIP). While their defaults drive me crazy (because I'm used to my own), if you're just starting out then you shouldn't have that issue. (I find NvChad has the most polished looks but I dislike its defaults the most, for instance.)
 
 ```bash
-# Before switching to any distribution, remove the old files
+# Before switching to any distribution, remove the old files.
+# This step is IMPORTANT otherwise the new install won't work!
 rm -f ~/.config/nvim/lazy-lock.json
 rm -f ~/.config/nvim/init.lua
 rm -f ~/.config/nvim/lua
 
-# AstroNvim
-ln -sf ~/bulk/lib/AstroNvim/init.lua        ~/.config/nvim/init.lua
-ln -sf ~/bulk/lib/AstroNvim/lua             ~/.config/nvim/lua
-
-# LazyVim
-ln -sf ~/bulk/lib/LazyVimStarter/init.lua   ~/.config/nvim/init.lua
-ln -sf ~/bulk/lib/LazyVimStarter/lua        ~/.config/nvim/lua
+# If you run into issues, you might need to also clear the package cache
+# rm -rf ~/.local/share/nvim/lazy
 
 # NvChad
-ln -sf ~/bulk/lib/NvChad/init.lua           ~/.config/nvim/init.lua
-ln -sf ~/bulk/lib/NvChad/lua                ~/.config/nvim/lua
+git clone https://github.com/NvChad/NvChad
+ln -sf `pwd`/NvChad/init.lua ~/.config/nvim/init.lua
+ln -sf `pwd`/NvChad/lua      ~/.config/nvim/lua
+
+# LazyVim
+git clone https://github.com/LazyVim/starter LazyVimStarter
+ln -sf `pwd`/LazyVimStarter/init.lua ~/.config/nvim/init.lua
+ln -sf `pwd`/LazyVimStarter/lua      ~/.config/nvim/lua
+
+# AstroNvim
+git clone https://github.com/AstroNvim/AstroNvim
+ln -sf `pwd`/AstroNvim/init.lua ~/.config/nvim/init.lua
+ln -sf `pwd`/AstroNvim/lua      ~/.config/nvim/lua
 
 # Back to mine
-ln -sf ~/code/dotnvim/init.lua              ~/.config/nvim/init.lua
-ln -sf ~/code/dotnvim/lua                   ~/.config/nvim/lua
+ln -sf `pwd`/dotnvim/init.lua ~/.config/nvim/init.lua
+ln -sf `pwd`/dotnvim/lua      ~/.config/nvim/lua
 ```
+
+You can read each of those project's documentations to see what they're all about. For the distributions, you might not be able to use some packages (e.g. if a program like npm is not installed on the server) but that's fine. Note all four options have some commonalities:
+
+- Code completion as you type (a pop-up with suggestions for words, files, functions, etc.) with previous and documentation, as applicable.
+- Search via [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim)
+- A file explorer
+- A terminal
+- A status line
+
+And a few others. Some differences are purely aesthetic (I like a plash page, which LazyVim also has, but you might not) and all are configurable.
 
 License
 -------
