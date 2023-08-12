@@ -1,0 +1,13 @@
+{
+    "program": {
+        "prefix": "prog",
+        "body": [
+            "capture program drop ${1:myprogram}",
+            "program $1",
+            "	syntax ${2:myargs}",
+            "	$0",
+            "end"
+        ],
+        "description": "Stata program"
+    }
+}

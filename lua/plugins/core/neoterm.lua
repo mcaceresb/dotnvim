@@ -1,0 +1,27 @@
+return {
+  "kassio/neoterm",
+  cmd = {
+    "Tnew",
+    "Topen",
+    "Ttoggle",
+    "Tredo",
+    "Tclear",
+    "Tclose",
+    "TcloseAll",
+    "Tkill",
+    "TREPLSetTerm",
+    "TREPLSendFile",
+    "TREPLSendLine",
+    "TREPLSendSelection",
+    "TtoggleAll",
+    "Tls",
+    "Tnext",
+    "Tprevious",
+  },
+  keys = {
+    { mode = "v", "<leader>p", ":TREPLSendSelection<CR>", desc = "Send selection to REPL" },
+    { mode = "n", "<leader>p", ":TREPLSendLine<CR>",      desc = "Send line to REPL" },
+    { mode = "n", "<A-i>",     ":horizontal Ttoggle<CR>", desc = "Toggle horizontal term" },
+    { mode = "n", "<A-v>",     ":vertical   Ttoggle<CR>", desc = "Toggle vertical term" },
+  },
+}
