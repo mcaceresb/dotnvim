@@ -136,18 +136,20 @@ local options = {
     ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
     ["<C-p>"]  = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
     ["<C-n>"]  = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-    ["<C-k>"]  = cmp.mapping(function()
+    ["<C-k>"]  = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
-        cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert }
+        fallback()
+        -- cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert }
       end
     end, { "i", "s" }),
-    ["<C-j>"] = cmp.mapping(function()
+    ["<C-j>"] = cmp.mapping(function(fallback)
       if luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       else
-        cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert }
+        fallback()
+        -- cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert }
       end
     end, { "i", "s" }),
     ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
