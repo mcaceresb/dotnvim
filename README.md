@@ -113,7 +113,9 @@ Server Installation
 
     - Set your terminal's font to your newly downloaded font (it will be something like Edit > Profiles > Edit > Font)
 
-5. You're set to try out neovim! You can install this repository as indicated [above](#local-installation). My normal workflow
+5. I highly recommend you swap caps lock and escape: `echo setxkbmap -option caps:swapescape >> ~/.profile`
+
+6. You're set to try out neovim! You can install this repository as indicated [above](#local-installation). My normal workflow
 
     - Open a vertical split (`:vsp<CR>`)
     - Make it into a terminal (`:Tnew<CR>`)
@@ -121,7 +123,7 @@ Server Installation
     - Start program in terminal (Stata, Python, R, etc.)
     - Send lines from code into terminal (`:TREPLSendLine<CR>` or `:TREPLSendSelection<CR>`)
 
-6. I recommend you try a neovim distribution. There are several that are easy to try and fairly popular! Their aesthetics are much nicer and their configurations more polished (my own setup here is very much a WIP). While their defaults drive me crazy (because I'm used to my own), if you're just starting out then you shouldn't have that issue. (For example, I quite like NvChad's aesthetics; you can toggle between my preferred look and NvChad's UI by setting the flavor variable in `./lua/core/config.lua`.)
+7. I recommend you try a neovim distribution. There are several that are easy to try and fairly popular! Their aesthetics are much nicer and their configurations more polished (my own setup here is very much a WIP). While their defaults drive me crazy (because I'm used to my own), if you're just starting out then you shouldn't have that issue. (For example, I quite like NvChad's aesthetics; you can toggle between my preferred look and NvChad's UI by setting the flavor variable in `./lua/core/config.lua`.)
 
 ```bash
 # Before switching to any distribution, remove the old files.
