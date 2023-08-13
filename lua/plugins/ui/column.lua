@@ -14,7 +14,7 @@ return {
     "xiyaowong/virtcolumn.nvim",
     lazy = false,
     config = function()
-      vim.opt.colorcolumn       = "100"
+      vim.opt.colorcolumn = "100"
       -- vim.g.virtcolumn_char     = "▏"
       -- vim.g.virtcolumn_char     = "▕"
       -- vim.g.virtcolumn_priority = 10

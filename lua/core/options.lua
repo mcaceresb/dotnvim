@@ -15,6 +15,7 @@ opt.smartcase   = true           -- Override ignorecase when upper letter is typ
 opt.mouse       = "a"            -- Mouse support everywhere ("a" = all)
 opt.winaltkeys  = "no"           -- Allow using alt keys for vim mappings
 opt.breakindent = true           -- Soft wrap respecting visual indentation
+opt.linebreak   = true           -- Soft wrap at specific characters (mainly prevents breaking words)
 opt.infercase   = true           -- Smart case in insert-mode completion
 opt.showbreak   = "  "           -- Prepend to start of soft-wrapped line
 opt.completeopt = "noinsert,menuone,noselect,preview"

@@ -10,6 +10,14 @@ autocmd("FileType", {
   end,
 })
 
+autocmd("FileType", {
+  pattern = { "tex", "text", "" },
+  callback = function()
+    vim.opt.colorcolumn = "0"
+    -- vim.cmd "redraw"
+  end,
+})
+
 -- weird bug https://github.com/neovim/neovim/issues/21856
 autocmd({ "VimLeave" }, {
   callback = function()
