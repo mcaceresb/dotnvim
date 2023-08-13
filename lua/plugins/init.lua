@@ -14,11 +14,11 @@ require("lazy").setup({
   -- ---------------------------
 
   { "Asheq/close-buffers.vim", cmd  = "Bdelete" }, -- delete buffers
-  { "tpope/vim-abolish"      }, -- match multi-case in find/replace
-  { "tpope/vim-speeddating"  }, -- make vim +/- work with dates
-  { "tpope/vim-repeat"       }, -- extend .
-  { "tommcdo/vim-exchange"   }, -- easier text swap; replace? gbprod/substitute.nvim
-  { "salsifis/vim-transpose" }, -- transpose text arrays by delimiter
+  { "tpope/vim-abolish"      , lazy = false     }, -- match multi-case in find/replace
+  { "tpope/vim-speeddating"  , lazy = false     }, -- make vim +/- work with dates
+  { "tpope/vim-repeat"       , lazy = false     }, -- extend .
+  { "tommcdo/vim-exchange"   , lazy = false     }, -- easier text swap; replace? gbprod/substitute.nvim
+  { "salsifis/vim-transpose" , lazy = false     }, -- transpose text arrays by delimiter
 
   require "plugins.etc.pencil",
   require "plugins.etc.todo",

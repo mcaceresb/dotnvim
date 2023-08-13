@@ -32,7 +32,8 @@ ln -sf ~/.local/share/nvim ~/.local/share/nvimbak
 ln -sf ~/.local/state/nvim ~/.local/state/nvimbak
 ```
 
-Then load neovim with your backup via
+Then load neovim with your backup settings
+
 ```
 NVIM_APPNAME=nvimbak nvim
 ```

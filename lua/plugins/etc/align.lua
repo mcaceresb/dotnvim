@@ -4,6 +4,7 @@
 -- junegunn/vim-easy-align
 return {
   'godlygeek/tabular',
+  lazy = false,
   init = function()
     require "mappings.align"()
   end,

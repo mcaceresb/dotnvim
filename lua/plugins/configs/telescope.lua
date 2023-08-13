@@ -1,3 +1,5 @@
+local nvchad_list = vim.g.nvchad_load and { "terms", "themes" } or {}
+
 return {
   defaults = {
     vimgrep_arguments = {
@@ -49,6 +51,5 @@ return {
     },
   },
 
-  -- "terms", "themes", if vim.g.nvchad_load
-  extensions_list = { "session-lens", "notify" },
+  extensions_list = { "session-lens", "notify", table.unpack(nvchad_list) },
 }

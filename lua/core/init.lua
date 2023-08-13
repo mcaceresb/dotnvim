@@ -2,7 +2,7 @@ local g = vim.g
 local config = require("core.config")
 
 -------------------------------------- globals -----------------------------------------
-g.nvchad_load        = false
+g.nvchad_load        = config.ui.nvchad_load
 g.nvchad_theme       = config.ui.theme
 g.base46_cache       = vim.fn.stdpath "data" .. "/nvchad/base46/"
 g.toggle_theme_icon  = "   "

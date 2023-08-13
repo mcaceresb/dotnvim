@@ -3,7 +3,7 @@
 --       https://github.com/nvim-lualine/lualine.nvim/issues/921
 return {
   "nvim-lualine/lualine.nvim",
-  enabled = true,
+  enabled = not vim.g.nvchad_load,
   event = "VeryLazy",
   opts = function()
     local Util  = require("custom.lazyvimutil")

@@ -2,6 +2,8 @@
 -- NOTE: don't fiddle with names/options too mcuh
 
 local M = {}
+-- local flavor = "nvchad"
+local flavor = "custom"
 
 M.ui = {
   ------------------------------- base46 -------------------------------------
@@ -9,11 +11,10 @@ M.ui = {
   hl_add              = {},
   hl_override         = {},
   changed_themes      = {},
-  -- theme_toggle        = { "onedark", "one_light" },
-  -- theme               = "onedark",
-  theme_toggle        = { "", "" },
-  theme               = "",
-  transparency        = true,
+  theme_toggle        = { "onedark", "one_light" },
+  theme               = "onedark",
+  nvchad_load         = flavor == "nvchad",
+  transparency        = flavor == "custom",
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
   -- https://github.com/NvChad/base46/tree/v2.0/lua/base46/extended_integrations
@@ -39,13 +40,21 @@ M.ui = {
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style   = "default",
-    overriden_modules = nil,
-    -- overriden_modules = function(modules)
-    --   modules[1] = function() end
-    --   modules[2] = function() end
-    --   modules[3] = function() end
-    --   modules[4] = function() end
-    -- end
+    -- overriden_modules = nil,
+    overriden_modules = function(modules)
+      if flavor == "custom" then
+        modules[1]  = (function() return "" end)()
+        modules[2]  = (function() return "" end)()
+        modules[3]  = (function() return "" end)()
+        modules[4]  = ""
+        modules[5]  = (function() return "" end)()
+        modules[6]  = ""
+        modules[7]  = (function() return "" end)()
+        modules[8]  = (function() return "" end)()
+        modules[9]  = (function() return "" end)()
+        modules[10] = (function() return "" end)()
+      end
+    end
   },
 
   -- lazyload it when there are 1+ buffers

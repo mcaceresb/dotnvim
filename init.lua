@@ -22,8 +22,6 @@ require "custom"
 -- TODO: Misc
 -- ----------
 
--- fix snippet trigger
--- override modules in statusline for nvchad so it doesn't show in alpha
 -- migrate snippets (mainly tex, stata)
 -- replace \xx with symbols (delta, sigma, etc.)
 

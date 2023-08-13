@@ -1,5 +1,3 @@
-local map = vim.keymap.set
-
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch  = "v3.x",
@@ -21,6 +19,7 @@ return {
         ["u"] = "navigate_up",
         ["f"] = "fuzzy_finder",
         ["/"] = "none",
+        ["U"] = "close_node",
       },
     },
   },
