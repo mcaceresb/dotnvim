@@ -26,4 +26,3 @@ require "config.mappings"
 require "config.autocmd"
 require "config.colors"
 require "custom.functions"
-vim.cmd('source ' .. vim.fn.stdpath "config" .. '/lua/custom/functions.vim')
