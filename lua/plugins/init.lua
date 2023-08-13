@@ -47,7 +47,10 @@ require("lazy").setup({
 -- TODO: language support
 -- ----------------------
 
--- snippet trigger
+-- gitsign delete file to red minus/red minus block, not a plain colorb lock
+-- gitsign added line to a green plus/plus cute block, not a vertical line
+-- you should actually divorce mappings from config, no?
+-- fix snippet trigger
 -- migrate snippets (mainly tex, stata)
 -- replace \xx with symbols (delta, sigma, etc.)
 -- lsp for python, tex, R, stata

@@ -12,3 +12,5 @@ new_cmd("Nowrap", function()
     vim.opt.linebreak = false
     vim.opt.list      = false
 end, {})
+
+vim.cmd('source ' .. vim.fn.stdpath "config" .. '/lua/custom/functions.vim')
