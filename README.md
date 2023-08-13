@@ -8,6 +8,7 @@ Requirements:
 
 - NeoVim (from your OS repository or follow the instructions on [github.com/neovim/neovim](https://github.com/neovim/neovim)).
 - A [Nerd Font](https://github.com/ryanoasis/nerd-fonts); I personally use the patched `SourceCodePro` (Sauce Code Pro). I rely heavily on a patched fonts for various symbols.
+    - Make sure you use the version of the nerd font that doesn't end in "mono" (or you'll get small icons).
 
 Installation:
 
@@ -120,7 +121,7 @@ Server Installation
     - Start program in terminal (Stata, Python, R, etc.)
     - Send lines from code into terminal (`:TREPLSendLine<CR>` or `:TREPLSendSelection<CR>`)
 
-6. I really recommend you try a neovim distribution. There are several that are easy to try and fairly popular! Their aesthetics are much nicer and their configurations more polished (my own setup here is very much a WIP). While their defaults drive me crazy (because I'm used to my own), if you're just starting out then you shouldn't have that issue. (I find NvChad has the most polished looks but I dislike its defaults the most, for instance.)
+6. I recommend you try a neovim distribution. There are several that are easy to try and fairly popular! Their aesthetics are much nicer and their configurations more polished (my own setup here is very much a WIP). While their defaults drive me crazy (because I'm used to my own), if you're just starting out then you shouldn't have that issue. (For example, I quite like NvChad's aesthetics; you can toggle between my preferred look and NvChad's UI by setting the flavor variable in `./lua/core/config.lua`.)
 
 ```bash
 # Before switching to any distribution, remove the old files.
@@ -160,7 +161,7 @@ You can read each of those project's documentations to see what they're all abou
 - A terminal
 - A status line
 
-And a few others. Some differences are purely aesthetic (I like a plash page, which LazyVim also has, but you might not) and all are configurable.
+And a few others. Some differences are purely aesthetic (I like a plash page, indent guides, etc. but you might not); all settings are configurable.
 
 License
 -------
