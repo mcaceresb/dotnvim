@@ -1,6 +1,5 @@
--- lsp symbol navigation for lualine. This shows where
--- in the code structure you are - within functions, classes,
--- etc - in the statusline.
+-- lsp symbol navigation for lualine. This shows where in the code structure
+-- you are - within functions, classes, etc - in the statusline.
 
 return {
   "SmiteshP/nvim-navic",

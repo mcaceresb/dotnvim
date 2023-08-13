@@ -23,7 +23,7 @@ return {
       end,
     })
   end,
-  config = function(_, opts)
+  config = function()
     local mini = require('mini.indentscope')
     local opts = {
       symbol = "▏",

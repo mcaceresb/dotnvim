@@ -3,7 +3,7 @@ return {
   lazy = false,
   cmd = { "NvimTreeToggle", "NvimTreeFocus" },
   init = function()
-    local config = require("plugins.config.nvimtree")
+    local config = require("plugins.configs.nvimtree")
     local on_attach = function(bufnr)
       local api = require "nvim-tree.api"
       local function opts(desc)

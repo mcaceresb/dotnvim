@@ -1,69 +1,16 @@
 -- indentation guides
 return {
   "lukas-reineke/indent-blankline.nvim",
+  -- version = "2.20.7",
   event = { "BufReadPost", "BufNewFile" },
-  opts = {
-    indentLine_enabled = 1,
-    char = "▏",
-    -- context_char = "│",
-    -- context_char = "▏",
-    -- char = "│",
-    filetype_exclude = {
-      "",
-      "NvimTree",
-      "TelescopePrompt",
-      "TelescopeResults",
-      "Trouble",
-      "aerial",
-      "alpha",
-      "dashboard",
-      "help",
-      "lazy",
-      "lazyterm",
-      "lspinfo",
-      "mason",
-      "neo-tree",
-      "neogitstatus",
-      "notify",
-      "nvcheatsheet",
-      "nvdash",
-      "startify",
-      "terminal",
-      "toggleterm",
-    },
-    context_patterns = {
-      "class",
-      "return",
-      "function",
-      "method",
-      "^if",
-      "^while",
-      "jsx_element",
-      "^for",
-      "^object",
-      "^table",
-      "block",
-      "arguments",
-      "if_statement",
-      "else_clause",
-      "jsx_element",
-      "jsx_self_closing_element",
-      "try_statement",
-      "catch_clause",
-      "import_statement",
-      "operation_type",
-    },
-    buftype_exclude                = { "nofile", "terminal" },
-    show_trailing_blankline_indent = false,
-    show_first_indent_level        = false,
-    -- TODO: xx treesittere does too much highlighting I think;
-    -- switch these to true if you end up enabling treesitter...
-    show_current_context           = false,
-    show_current_context_start     = false,
-    use_treesitter                 = false,
-  },
+  opts = function()
+    return require("plugins.configs.blankline")
+  end,
   config = function(_, opts)
-    require("plugins.config.blankline").mappings()
+    require "mappings.blankline"()
+    if vim.g.nvchad_load then
+      dofile(vim.g.base46_cache .. "blankline")
+    end
     require("indent_blankline").setup(opts)
   end,
 }

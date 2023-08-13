@@ -1,5 +1,5 @@
 -- regex tips, parsing, etc.
--- TODO: Currently buggy with python/stata flavored regex
+-- NOTE: Currently buggy with python/stata flavored regex
 return {
   "tomiis4/Hypersonic.nvim",
   lazy = true,

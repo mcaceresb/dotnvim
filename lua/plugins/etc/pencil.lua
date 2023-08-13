@@ -1,6 +1,8 @@
 -- preferred color scheme
 return {
   dir = vim.fn.stdpath("config") .. "/custom/pencil",
+  lazy = false,
+  enabled = not vim.g.nvchad_load,
   config = function()
     require("pencil").setup({
       options = {
@@ -15,5 +17,4 @@ return {
     })
     require("pencil").load()
   end,
-  -- lazy = true,
 }

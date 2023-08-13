@@ -52,7 +52,8 @@ function M.generate_palette(bg)
 
    if bg == "dark" then
       theme = vim.tbl_extend("error", theme, {
-            comment        = "#A6A6A6",
+            -- comment        = "#A6A6A6",
+            comment        = "#808080",
             greenz         = "#99CC99",
             bluez          = theme.light_blue_grey,
             grayz          = theme.dark_gray,

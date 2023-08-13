@@ -7,7 +7,7 @@ return {
   event = "VeryLazy",
   opts = function()
     local Util  = require("custom.lazyvimutil")
-    local icons = require("config.icons")
+    local icons = require("custom.icons")
 
     return {
       options = {
