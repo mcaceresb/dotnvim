@@ -2,8 +2,9 @@
 -- with the active keybindings of the command you started typing.
 return {
   "folke/which-key.nvim",
-  -- TODO: xx keys is in NvChad but not LazyVim; folke made LazyVim so I'd go with this
+  -- NOTE: keys is in NvChad but not LazyVim
   -- keys = { "<leader>", "<LocalLeader>", '"', "'", "`", "c", "v", "g" },
+  -- NOTE: event and opts is in LazyVim but not NvChad
   event = "VeryLazy",
   opts  = {
     plugins  = {
@@ -30,9 +31,12 @@ return {
     },
   },
   init = function()
-    require("plugins.config.whichkey").mappings()
+    require "mappings.whichkey"()
   end,
   config = function(_, opts)
+    if vim.g.nvchad_load then
+      dofile(vim.g.base46_cache .. "whichkey")
+    end
     local wk = require("which-key")
     wk.setup(opts)
     wk.register(opts.defaults)

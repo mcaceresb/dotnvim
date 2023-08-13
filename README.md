@@ -21,6 +21,23 @@ ln -sf `pwd`/dotnvim/custom    ~/.config/nvim/custom
 
 Start NeoVim; the first time it boots up it will automagically install all required packages.
 
+Fallback
+--------
+
+If you want to tinker with your config files, it might be a good idea to set up a backup folder to load while debugging the config. If you're trying out a package or if your config breaks, it can be annoying to try and fix it from neovim while the config files aren't working as expected.
+
+```
+ln -sf `pwd`/neovim ~/.config/nvimbak
+ln -sf ~/.local/share/nvim ~/.local/share/nvimbak
+ln -sf ~/.local/state/nvim ~/.local/state/nvimbak
+```
+
+Then load neovim with your backup settings
+
+```
+NVIM_APPNAME=nvimbak nvim
+```
+
 Server Installation
 -------------------
 

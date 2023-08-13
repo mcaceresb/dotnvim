@@ -1,10 +1,6 @@
 -- nicer colorcolumn
 return {
   -- {
-  --   "m4xshen/smartcolumn.nvim",
-  --   config = { colorcolumn = "100" },
-  -- },
-  -- {
   --   "lukas-reineke/virt-column.nvim",
   --   -- lazy = false,
   --   opts = { char = "▏" },
@@ -16,7 +12,7 @@ return {
   -- highlight VirtColumn
   {
     "xiyaowong/virtcolumn.nvim",
-    -- lazy = false,
+    lazy = false,
     config = function()
       vim.opt.colorcolumn       = "100"
       -- vim.g.virtcolumn_char     = "▏"
