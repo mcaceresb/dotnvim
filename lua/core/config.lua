@@ -2,8 +2,8 @@
 -- NOTE: don't fiddle with names/options too mcuh
 
 local M = {}
--- local flavor = "nvchad"
-local flavor = "custom"
+local flavor = "nvchad"
+-- local flavor = "custom"
 
 M.ui = {
   ------------------------------- base46 -------------------------------------
