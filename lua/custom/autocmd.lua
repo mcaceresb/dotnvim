@@ -11,7 +11,7 @@ autocmd("FileType", {
 })
 
 autocmd("FileType", {
-  pattern = { "tex", "text", "" },
+  pattern = { "tex", "text", "neoterm", "" },
   callback = function()
     vim.opt.colorcolumn = "0"
     -- vim.cmd "redraw"
