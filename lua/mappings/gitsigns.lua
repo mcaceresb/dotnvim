@@ -3,7 +3,7 @@ local merge = function(...) vim.tbl_deep_extend("force", ...) end
 local map   = vim.keymap.set
 
 M.global = function ()
-  map("n", "<F3>", "<cmd>Gitsigns toggle_signs<cr>", {desc = "Toggle git signs" })
+  map("n", "<F3>", "<cmd>Gitsigns toggle_signs<cr>", { desc = "Toggle git signs" })
 end
 
 M.buffer = function (opts)

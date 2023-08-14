@@ -74,7 +74,7 @@ Server Installation
     - `fd` file finder:
 
         ```
-        https://github.com/sharkdp/fd/releases/download/v8.7.0/fd-v8.7.0-i386-unknown-linux-gnu.tar.gz
+        wget https://github.com/sharkdp/fd/releases/download/v8.7.0/fd-v8.7.0-i686-unknown-linux-gnu.tar.gz
         tar -xvf fd-v8.7.0-i386-unknown-linux-gnu.tar.gz
         ln -sf `pwd`/fd-v8.7.0-i386-unknown-linux-gnu/fd $HOME/bin/fd
         ```

@@ -15,4 +15,6 @@ return function()
       end
     end,
     { desc = "Jump to current context" })
+
+  map("n", "<F2>", "<cmd>IndentBlanklineToggle<cr>", { desc = "Toggle indent guides" })
 end
