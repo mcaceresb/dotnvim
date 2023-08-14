@@ -19,26 +19,16 @@ require "plugins"
 require "mappings"
 require "custom"
 
--- TODO: Misc
--- ----------
-
--- migrate snippets (mainly tex, stata)
--- replace \xx with symbols (delta, sigma, etc.)
-
 -- TODO: language support
 -- ----------------------
 
+-- spell should select the first word and not close the dialogue
+-- max tabline widt
+-- migrate snippets (mainly tex, stata)
 -- lsp for python, tex, R, stata
+-- 'google/yapf', {'rtp': 'plugins/vim', 'for': 'python'}
 -- 'mzlogin/vim-markdown-toc', {'as' : 'markdown-toc'}
--- 'JuliaLang/julia-vim',      {'as' : 'julia'}
--- 'google/yapf',              {'rtp': 'plugins/vim',  'for': 'python'}
--- 'vim-scripts/SAS-Syntax',   {'as' : 'sas',          'for' : 'sas'}
--- 'jalvesaq/Nvim-R',          {'as' : 'rplugin',      'for' : 'r'}
--- 'lervag/vimtex',            {'as' : 'vimtex',       'for' : 'tex'}
---
--- language let  g:bundle_path = fnamemodify(resolve(expand('<sfile>:p')), ':h:h') . '/bundle/'
--- language Plug g:bundle_path . 'latex-fenced-languages', {'for' : 'tex'}
--- language Plug g:bundle_path . 'latex-suite-folding',    {'for' : 'tex'}
+-- 'vim-scripts/SAS-Syntax', {'as' : 'sas', 'for' : 'sas'}
 
 -- TODO: Check these out!
 -- ----------------------
@@ -46,6 +36,7 @@ require "custom"
 -- xx nvchad telescope base46 theme
 -- xx nvchad lazy      base46 theme
 -- xx nvchad etc       base46 theme
+-- xx rockerBOO/awesome-neovim
 -- xx kamykn/spelunker.vim
 -- xx rafamadriz/friendly-snippets
 -- xx folke/noice.nvim
